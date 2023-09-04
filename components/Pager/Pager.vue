@@ -1,5 +1,5 @@
 <template>
-  <Flex class="w-[36rem] justify-center">
+  <div class="flex justify-center w-[36rem]">
     <NuxtLink
       class="flex items-center"
       v-show="prev !== 0"
@@ -31,11 +31,10 @@
         <IconButton area-label="next page" as="chevron-right" />
       </NuxtLink>
     </div>
-  </Flex>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import Flex from '~/components/Flex.vue';
 import PageLink from '~/components/Pager/PageLink.vue';
 import IconButton from '~/components/icons/IconButton.vue';
 import ChevronLeft from '~/components//icons/ChevronLeft.vue';
@@ -43,7 +42,6 @@ import ChevronRight from '~/components/icons/ChevronRight.vue';
 
 export default defineComponent({
   components: {
-    Flex,
     PageLink,
     IconButton,
     ChevronLeft,

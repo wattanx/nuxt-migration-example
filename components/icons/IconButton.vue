@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ChevronLeft class="h-10 min-w-[2.5rem]" v-show="isChevronLeft" />
-    <ChevronRight class="h-10 min-w-[2.5rem]" v-show="isChevronRight" />
+    <ChevronLeft class="h-[24px] min-w-[2.5rem]" v-show="isChevronLeft" />
+    <ChevronRight class="h-[24px] min-w-[2.5rem]" v-show="isChevronRight" />
   </div>
 </template>
 <script lang="ts">

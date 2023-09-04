@@ -11,7 +11,6 @@ import { getIssues } from '~/composables/github';
 import ContentWrapper from '~/components/ContentWrapper.vue';
 import Stack from '~/components/Stack.vue';
 import IssuesListCell from '~/components/IssuesListCell.vue';
-import Flex from '~/components/Flex.vue';
 import Pager from '~/components/Pager/Pager.vue';
 import type { IssueType } from '~/types/IssueType';
 
@@ -58,7 +57,7 @@ watch(pageQueryNumber, () => {
         />
       </Stack>
     </div>
-    <Flex class="mt-3 items-center justify-center">
+    <div class="flex mt-3 items-center justify-center">
       <Pager
         :current="current"
         :first="1"
@@ -66,6 +65,6 @@ watch(pageQueryNumber, () => {
         :next="next"
         :prev="prev"
       />
-    </Flex>
+    </div>
   </ContentWrapper>
 </template>

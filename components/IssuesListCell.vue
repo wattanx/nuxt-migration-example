@@ -1,6 +1,6 @@
 <template>
-  <Flex
-    class="border-b-[1px] last:rounded-lg border-t-[#e2e2e2] first:border-t-transparent"
+  <div
+    class="flex border-b-[1px] last:rounded-lg border-t-[#e2e2e2] first:border-t-transparent"
   >
     <div v-show="state === 'open'" class="pt-3 pl-3">
       <OpenStatus />
@@ -16,17 +16,15 @@
       </NuxtLink>
       <p class="text-sm">#{{ issueNumber }}</p>
     </div>
-  </Flex>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
-import Flex from '~/components/Flex.vue';
 import ClosedStatus from '~/components/ClosedStatus.vue';
 import OpenStatus from '~/components/OpenStatus.vue';
 
 export default defineComponent({
   components: {
-    Flex,
     ClosedStatus,
     OpenStatus,
   },
