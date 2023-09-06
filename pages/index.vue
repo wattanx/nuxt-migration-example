@@ -12,8 +12,10 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
 import Container from '~/components/Container.vue';
+import Hero from '~/components/Hero.vue';
+import CTA from '~/components/CTA.vue';
 
 export default defineComponent({
-  components: { Container },
+  components: { Container, Hero, CTA },
 });
 </script>

@@ -5,7 +5,7 @@
     mb="16px"
     line-height="1.2"
   >
-    Vue Fes 2023
+    Nuxt Bridge Migration Example
   </h2>
 </template>
 <script lang="ts">
