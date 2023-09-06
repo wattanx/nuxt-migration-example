@@ -45,6 +45,9 @@ watch(pageQueryNumber, () => {
 </script>
 <template>
   <ContentWrapper>
+    <NuxtLink to="/issues/history" class="pb-2 flex text-blue-500 underline"
+      >Go to history</NuxtLink
+    >
     <div
       class="rounded-lg border-x-[1px] border-t-[1px] border-b-none border-[#e2e2e2] min-h-[540px]"
     >

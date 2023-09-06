@@ -12,20 +12,14 @@ import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
 import Stack from '~/components/Stack.vue';
 
-const { $client } = useContext();
+const { $client, store } = useContext();
 
 const title = ref<string>('');
 const body = ref<string>('');
 const issueNumber = ref<number>(0);
 const route = useRoute();
 
-const pageQueryNumber = computed<number>(() => {
-  return Number(route.value.query.page) || 1;
-});
-
 const repo = useTargetRepository();
-
-watch(pageQueryNumber, () => {});
 
 useFetch(async () => {
   const res = await getIssue($client, {
@@ -35,6 +29,11 @@ useFetch(async () => {
   title.value = res.title;
   body.value = res.body;
   issueNumber.value = res.issueNumber;
+
+  store.dispatch('issues/history/setIssue', {
+    title: res.title,
+    issueNumber: res.issueNumber,
+  });
 });
 </script>
 <template>
