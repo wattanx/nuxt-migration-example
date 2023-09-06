@@ -8,8 +8,6 @@ import {
   useContext,
 } from '@nuxtjs/composition-api';
 import { getIssues } from '~/composables/github';
-import ContentWrapper from '~/components/ContentWrapper.vue';
-import Stack from '~/components/Stack.vue';
 import IssuesListCell from '~/components/IssuesListCell.vue';
 import Pager from '~/components/Pager/Pager.vue';
 import type { IssueType } from '~/types/IssueType';
@@ -44,21 +42,21 @@ watch(pageQueryNumber, () => {
 });
 </script>
 <template>
-  <ContentWrapper>
+  <div class="max-w-[1280px] m-auto p-5">
     <NuxtLink to="/issues/history" class="pb-2 flex text-blue-500 underline"
       >Go to history</NuxtLink
     >
     <div
       class="rounded-lg border-x-[1px] border-t-[1px] border-b-none border-[#e2e2e2] min-h-[540px]"
     >
-      <Stack class="flex-col space-y-0" v-if="issues.length !== 0">
+      <div class="flex flex-col space-y-0" v-if="issues.length !== 0">
         <IssuesListCell
           v-for="issue in issues"
           :key="issue.issueNumber"
           :issueNumber="issue.issueNumber"
           :title="issue.title"
         />
-      </Stack>
+      </div>
     </div>
     <div class="flex mt-3 items-center justify-center">
       <Pager
@@ -69,5 +67,5 @@ watch(pageQueryNumber, () => {
         :prev="prev"
       />
     </div>
-  </ContentWrapper>
+  </div>
 </template>

@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import {
-  ref,
-  useFetch,
-  useRoute,
-  computed,
-  watch,
-  useContext,
-} from '@nuxtjs/composition-api';
-import ContentWrapper from '~/components/ContentWrapper.vue';
+import { ref, useFetch, useRoute, useContext } from '@nuxtjs/composition-api';
 import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
-import Stack from '~/components/Stack.vue';
 
 const { $client, store } = useContext();
 
@@ -37,23 +28,23 @@ useFetch(async () => {
 });
 </script>
 <template>
-  <ContentWrapper>
+  <div class="max-w-[1280px] m-auto p-5">
     <div class="border-b-[1px] border-b-[#e2e2e2]">
-      <Stack class="flex-row items-center">
+      <div class="flex flex-row items-center">
         <h2>
           {{ title }}
           <span class="ml-2 font-normal text-[#b9b9b9]">
             #{{ issueNumber }}
           </span>
         </h2>
-      </Stack>
+      </div>
     </div>
     <div class="mt-3 rounded-md border-[1px] border-solid border-[#e2e2e2] p-2">
       <div class="border-b-solid border-b-[1px] border-b-[#e2e2e2] p-1"></div>
       <!-- eslint-disable -->
       <div class="markdown-body mt-3" v-html="body"></div>
     </div>
-  </ContentWrapper>
+  </div>
 </template>
 
 <script lang="ts">

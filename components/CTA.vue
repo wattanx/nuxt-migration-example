@@ -1,6 +1,6 @@
 <template>
   <Container class="w-full max-w-[48rem] py-3">
-    <Stack class="mt-10 justify-center space-x-4">
+    <div class="flex mt-10 justify-center space-x-4">
       <NuxtLink
         class="inline-flex h-16 min-w-[4rem] items-center justify-center rounded-md bg-green-200 px-10 text-base font-bold"
         to="/issues"
@@ -14,18 +14,17 @@
       >
         GitHub<GitHubIcon class="ml-1" />
       </a>
-    </Stack>
+    </div>
   </Container>
 </template>
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
 import Container from '~/components/Container.vue';
-import Stack from '~/components//Stack.vue';
 import ArrowForward from '~/components//icons/ArrowForward.vue';
 import GitHubIcon from '~/components//icons/GitHubIcon.vue';
 
 export default defineComponent({
-  components: { Container, Stack, ArrowForward, GitHubIcon },
+  components: { Container, ArrowForward, GitHubIcon },
   setup() {},
 });
 </script>
