@@ -1,5 +1,7 @@
-export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+import { defineNuxtConfig } from '@nuxt/bridge';
+
+export default defineNuxtConfig({
+  bridge: false,
   head: {
     title: 'app',
     htmlAttrs: {
@@ -20,7 +22,7 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  // @ts-ignore remove nuxt 3
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
@@ -46,4 +48,4 @@ export default {
     targetOrganization: 'facebook',
     targetRepository: 'react',
   },
-};
+});
