@@ -17,16 +17,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.7.5
+
       - name: Set up node
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Build nuxt.js app
-        run: yarn build
+        run: pnpm build:analyze
 
       # run report
       - name: Analyze bundle

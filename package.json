@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nuxt2",
     "build": "nuxt2 build",
+    "build:analyze": "ANALYZE=\"true\" nuxt build",
     "start": "nuxt2 start",
     "generate": "nuxt2 generate",
     "lint:prettier": "prettier --check .",
@@ -34,6 +35,9 @@
     "unified": "10.1.2",
     "vite": "^4.4.9",
     "vitest": "^0.33.0"
+  },
+  "nuxtBundleAnalysis": {
+    "minimumChangeThreshold": 50
   },
   "nuxtBundleAnalysis": {
     "minimumChangeThreshold": 50

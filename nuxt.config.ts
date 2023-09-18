@@ -1,3 +1,5 @@
+const isAnalyzeMode = process.env.ANALYZE === 'true';
+
 import { defineNuxtConfig } from '@nuxt/bridge';
 
 export default defineNuxtConfig({
@@ -42,6 +44,14 @@ export default defineNuxtConfig({
         },
       },
     },
+    analyze: isAnalyzeMode
+      ? {
+          generateStatsFile: true,
+          // @ts-ignore bridgeに移行するときに修正する必要あり
+          analyzeMode: 'disabled',
+          openAnalyzer: false,
+        }
+      : false,
   },
   plugins: [{ src: '~/plugins/client', ssr: false }],
   publicRuntimeConfig: {
