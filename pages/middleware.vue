@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineNuxtComponent } from '#imports';
 
-export default defineComponent({
+export default defineNuxtComponent({
   middleware: ['redirect'],
 });
 </script>

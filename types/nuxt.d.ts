@@ -9,5 +9,11 @@ declare module '@nuxt/types' {
 declare module '@nuxt/bridge-schema' {
   interface Nuxt2Context {
     $client: IHttpClient;
+    $store: any;
+  }
+
+  interface NuxtAppCompat {
+    $client: IHttpClient;
+    $store: any;
   }
 }
