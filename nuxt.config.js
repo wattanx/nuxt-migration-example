@@ -1,3 +1,5 @@
+const isAnalyzeMode = process.env.ANALYZE === 'true';
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -40,6 +42,14 @@ export default {
         },
       },
     },
+    analyze: isAnalyzeMode
+      ? {
+          generateStatsFile: true,
+          // @ts-ignore bridgeに移行するときに修正する必要あり
+          analyzeMode: 'disabled',
+          openAnalyzer: false,
+        }
+      : false,
   },
   plugins: [{ src: '~/plugins/client', ssr: false }],
   publicRuntimeConfig: {

@@ -31,7 +31,7 @@ jobs:
         run: pnpm install
 
       - name: Build nuxt.js app
-        run: pnpm build
+        run: pnpm build:analyze
 
       # run report
       - name: Analyze bundle
