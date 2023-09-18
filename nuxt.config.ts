@@ -4,7 +4,7 @@ import { defineNuxtConfig } from '@nuxt/bridge';
 
 export default defineNuxtConfig({
   bridge: {
-    capi: false,
+    capi: true,
     typescript: true,
     nitro: false,
   },
@@ -27,9 +27,6 @@ export default defineNuxtConfig({
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // @ts-ignore remove nuxt 3
-  buildModules: ['@nuxtjs/composition-api/module'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],

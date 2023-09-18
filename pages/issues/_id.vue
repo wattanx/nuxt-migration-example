@@ -14,7 +14,7 @@ const repo = useTargetRepository();
 
 useFetch(async () => {
   const res = await getIssue($client, {
-    issueNumber: route.value.params.id,
+    issueNumber: route.params.id,
     repo,
   });
   title.value = res.title;

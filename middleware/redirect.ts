@@ -1,6 +1,6 @@
-import { defineNuxtMiddleware } from '@nuxtjs/composition-api';
+import type { Middleware } from '@nuxt/types';
 
-export default defineNuxtMiddleware(({ redirect, route }) => {
+export default <Middleware>(({ redirect, route }) => {
   console.log('route.path', route.path);
   return redirect('/');
 });
