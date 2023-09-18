@@ -3,7 +3,11 @@ const isAnalyzeMode = process.env.ANALYZE === 'true';
 import { defineNuxtConfig } from '@nuxt/bridge';
 
 export default defineNuxtConfig({
-  bridge: false,
+  bridge: {
+    capi: false,
+    typescript: true,
+    nitro: false,
+  },
   head: {
     title: 'app',
     htmlAttrs: {
@@ -25,11 +29,7 @@ export default defineNuxtConfig({
   components: true,
 
   // @ts-ignore remove nuxt 3
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    '@nuxtjs/composition-api/module',
-  ],
+  buildModules: ['@nuxtjs/composition-api/module'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
