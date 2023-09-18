@@ -17,7 +17,7 @@ const route = useRoute();
 const { $client } = useContext();
 
 const pageQueryNumber = computed<number>(() => {
-  return Number(route.value.query.page) || 1;
+  return Number(route.query.page) || 1;
 });
 
 const issues = ref<IssueType[]>([]);
@@ -27,8 +27,8 @@ const next = ref(0);
 const prev = ref(0);
 
 const { fetch: refresh } = useFetch(async () => {
-  const pageNumber = route.value.query.page ?? '1';
-  const perPage = route.value.query.per_page ?? '10';
+  const pageNumber = route.query.page ?? '1';
+  const perPage = route.query.per_page ?? '10';
   const res = await getIssues($client, pageNumber as string, perPage as string);
   issues.value = res.issues;
   last.value = res.lastPage;
