@@ -55,4 +55,5 @@ export default defineNuxtConfig({
     targetOrganization: 'facebook',
     targetRepository: 'react',
   },
+  ssr: false,
 });
