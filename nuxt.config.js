@@ -56,4 +56,5 @@ export default {
     targetOrganization: 'facebook',
     targetRepository: 'react',
   },
+  ssr: false,
 };
