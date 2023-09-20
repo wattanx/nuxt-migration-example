@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { useNuxtApp, computed } from '#imports';
+import { useNuxtApp, computed, useHead } from '#imports';
 import type { IssueType } from '~/types';
 
 const { $store: store } = useNuxtApp();
+
+useHead({
+  title: 'History',
+});
 
 const issues = computed<Pick<IssueType, 'title' | 'issueNumber'>[]>(
   () => store.getters['issues/history/getIssues']

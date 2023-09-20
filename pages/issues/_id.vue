@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useLazyAsyncData, useRoute, useNuxtApp } from '#imports';
+import { ref, useLazyAsyncData, useRoute, useNuxtApp, useHead } from '#imports';
 import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
 
@@ -26,6 +26,10 @@ useLazyAsyncData('issues_id', async () => {
     issueNumber: res.issueNumber,
   });
 });
+
+useHead(() => ({
+  title: `#${issueNumber.value}`,
+}));
 </script>
 <template>
   <div class="max-w-[1280px] m-auto p-5">

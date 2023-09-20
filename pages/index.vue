@@ -17,5 +17,8 @@ import CTA from '~/components/CTA.vue';
 
 export default defineNuxtComponent({
   components: { Container, Hero, CTA },
+  head: {
+    title: 'Home',
+  },
 });
 </script>
