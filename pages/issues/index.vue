@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useHead } from '#imports';
 import {
   useRoute,
   useFetch,
@@ -11,6 +12,10 @@ import { getIssues } from '~/composables/github';
 import IssuesListCell from '~/components/IssuesListCell.vue';
 import Pager from '~/components/Pager/Pager.vue';
 import type { IssueType } from '~/types/IssueType';
+
+useHead({
+  title: 'Issues List',
+});
 
 const route = useRoute();
 
