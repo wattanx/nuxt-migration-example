@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import { useHead } from '#imports';
 import { useStore, computed } from '@nuxtjs/composition-api';
 import type { IssueType } from '~/types';
+
+useHead({
+  title: 'History',
+});
 
 const store = useStore();
 

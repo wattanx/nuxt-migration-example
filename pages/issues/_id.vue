@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useHead } from '#imports';
 import { ref, useFetch, useRoute, useContext } from '@nuxtjs/composition-api';
 import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
@@ -26,6 +27,10 @@ useFetch(async () => {
     issueNumber: res.issueNumber,
   });
 });
+
+useHead(() => ({
+  title: `#${issueNumber.value}`,
+}));
 </script>
 <template>
   <div class="max-w-[1280px] m-auto p-5">
