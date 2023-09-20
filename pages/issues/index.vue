@@ -2,12 +2,12 @@
 import { useHead } from '#imports';
 import {
   useRoute,
-  useFetch,
+  useLazyAsyncData,
   ref,
   watch,
   computed,
-  useContext,
-} from '@nuxtjs/composition-api';
+  useNuxtApp,
+} from '#imports';
 import { getIssues } from '~/composables/github';
 import IssuesListCell from '~/components/IssuesListCell.vue';
 import Pager from '~/components/Pager/Pager.vue';
@@ -19,7 +19,7 @@ useHead({
 
 const route = useRoute();
 
-const { $client } = useContext();
+const { $client } = useNuxtApp();
 
 const pageQueryNumber = computed<number>(() => {
   return Number(route.query.page) || 1;
@@ -31,7 +31,7 @@ const last = ref(0);
 const next = ref(0);
 const prev = ref(0);
 
-const { fetch: refresh } = useFetch(async () => {
+const { refresh } = useLazyAsyncData('issues_list', async () => {
   const pageNumber = route.query.page ?? '1';
   const perPage = route.query.per_page ?? '10';
   const res = await getIssues($client, pageNumber as string, perPage as string);

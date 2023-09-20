@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useHead } from '#imports';
-import { useStore, computed } from '@nuxtjs/composition-api';
+import { useNuxtApp, computed, useHead } from '#imports';
 import type { IssueType } from '~/types';
+
+const { $store: store } = useNuxtApp();
 
 useHead({
   title: 'History',
 });
-
-const store = useStore();
 
 const issues = computed<Pick<IssueType, 'title' | 'issueNumber'>[]>(
   () => store.getters['issues/history/getIssues']

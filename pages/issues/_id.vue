@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { useHead } from '#imports';
-import { ref, useFetch, useRoute, useContext } from '@nuxtjs/composition-api';
+import { ref, useLazyAsyncData, useRoute, useNuxtApp, useHead } from '#imports';
 import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
 
-const { $client, store } = useContext();
+const { $client, $store: store } = useNuxtApp();
 
 const title = ref<string>('');
 const body = ref<string>('');
@@ -13,7 +12,7 @@ const route = useRoute();
 
 const repo = useTargetRepository();
 
-useFetch(async () => {
+useLazyAsyncData('issues_id', async () => {
   const res = await getIssue($client, {
     issueNumber: route.params.id,
     repo,

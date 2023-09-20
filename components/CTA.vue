@@ -18,7 +18,7 @@
   </Container>
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent } from '#imports';
 import Container from '~/components/Container.vue';
 import ArrowForward from '~/components//icons/ArrowForward.vue';
 import GitHubIcon from '~/components//icons/GitHubIcon.vue';

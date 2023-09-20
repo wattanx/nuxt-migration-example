@@ -34,7 +34,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent } from '#imports';
 import PageLink from '~/components/Pager/PageLink.vue';
 import IconButton from '~/components/icons/IconButton.vue';
 import ChevronLeft from '~/components//icons/ChevronLeft.vue';
