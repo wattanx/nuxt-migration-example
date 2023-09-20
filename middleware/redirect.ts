@@ -1,6 +1,6 @@
-import type { Middleware } from '@nuxt/types';
+import { defineNuxtRouteMiddleware, navigateTo } from '#app';
 
-export default <Middleware>(({ redirect, route }) => {
-  console.log('route.path', route.path);
-  return redirect('/');
+export default defineNuxtRouteMiddleware((to) => {
+  console.log('to.path', to.path);
+  return navigateTo('/');
 });
