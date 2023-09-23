@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     capi: true,
     typescript: true,
     meta: true,
-    nitro: false,
+    nitro: true,
   },
   app: {
     head: {
