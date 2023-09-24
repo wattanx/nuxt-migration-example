@@ -54,9 +54,11 @@ export default defineNuxtConfig({
       : false,
   },
   plugins: [{ src: '~/plugins/client', ssr: false }],
-  publicRuntimeConfig: {
-    targetOrganization: 'facebook',
-    targetRepository: 'react',
+  runtimeConfig: {
+    public: {
+      targetOrganization: 'facebook',
+      targetRepository: 'react',
+    },
   },
   ssr: false,
 });
