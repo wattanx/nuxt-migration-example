@@ -1,14 +1,8 @@
 const isAnalyzeMode = process.env.ANALYZE === 'true';
 
-import { defineNuxtConfig } from '@nuxt/bridge';
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  bridge: {
-    capi: true,
-    typescript: true,
-    meta: true,
-    nitro: true,
-  },
   app: {
     head: {
       title: 'app',
@@ -32,28 +26,15 @@ export default defineNuxtConfig({
   components: true,
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@wattanx/nuxt-vuex'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
-    analyze: isAnalyzeMode
-      ? {
-          generateStatsFile: true,
-          // @ts-ignore bridgeに移行するときに修正する必要あり
-          analyzeMode: 'disabled',
-          openAnalyzer: false,
-        }
-      : false,
   },
-  plugins: [{ src: '~/plugins/client', ssr: false }],
   runtimeConfig: {
     public: {
       targetOrganization: 'facebook',
@@ -61,4 +42,14 @@ export default defineNuxtConfig({
     },
   },
   ssr: false,
+  builder: 'webpack',
+  webpack: {
+    analyze: isAnalyzeMode
+      ? {
+          generateStatsFile: true,
+          analyzeMode: 'disabled',
+          openAnalyzer: false,
+        }
+      : false,
+  },
 });
