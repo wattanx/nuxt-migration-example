@@ -35,6 +35,8 @@
     "vitest": "^0.33.0"
   },
   "nuxtBundleAnalysis": {
-    "minimumChangeThreshold": 50
+    "minimumChangeThreshold": 50,
+    "clientDir": "dist/client/_nuxt",
+    "statsFile": ".nuxt/analyze/client.json"
   }
 }
