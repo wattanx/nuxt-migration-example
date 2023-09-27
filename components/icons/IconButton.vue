@@ -5,7 +5,7 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, defineComponent } from '@nuxtjs/composition-api';
+import { computed, defineComponent } from '#imports';
 import ChevronRight from './ChevronRight.vue';
 import ChevronLeft from './ChevronLeft.vue';
 
