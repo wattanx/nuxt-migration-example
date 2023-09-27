@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   components: true,
-  modules: [],
+  modules: ['@wattanx/nuxt-vuex'],
   postcss: {
     plugins: {
       tailwindcss: {},

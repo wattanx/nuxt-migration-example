@@ -10,18 +10,19 @@
     "generate": "nuxt generate",
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:prettier",
-    "lintfix": "prettier --write --list-different ."
+    "lintfix": "prettier --write --list-different .",
+    "prepare": "nuxt prepare"
   },
-  "dependencies": {},
   "devDependencies": {
     "@nuxt/webpack-builder": "^3.7.3",
     "@types/dompurify": "^3.0.2",
     "@vitejs/plugin-vue": "^4.3.4",
     "@vue/test-utils": "2.4.1",
+    "@wattanx/nuxt-vuex": "^0.0.3",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
-    "eslint-config-prettier": "^8.5.0",
     "dompurify": "^3.0.5",
+    "eslint-config-prettier": "^8.5.0",
     "nuxt": "3.7.3",
     "postcss": "^8.4.27",
     "prettier": "^2.7.1",
