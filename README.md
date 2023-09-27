@@ -7,6 +7,10 @@ This repository is a sample repository that uses Nuxt Bridge to migrate from Nux
 https://github.com/wattanx/nuxt-migration-example/tree/migrate-nuxt-bridge
 
 ### Steps
+
+You can start at any step.
+You don't have to do everything at once.
+
 - [First Step](https://nuxt.com/docs/bridge/overview)
   - chore: update nuxt bridge https://github.com/wattanx/nuxt-migration-example/pull/2
 - [TypeScript](https://nuxt.com/docs/bridge/typescript)
