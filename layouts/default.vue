@@ -4,6 +4,6 @@ import SiteHeader from '~/components/SiteHeader.vue';
 <template>
   <div>
     <SiteHeader />
-    <Nuxt />
+    <slot />
   </div>
 </template>

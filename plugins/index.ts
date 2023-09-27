@@ -1,8 +1,8 @@
-import { defineNuxtPlugin } from '@nuxtjs/composition-api';
+import { defineNuxtPlugin } from '#app';
 import axios, { AxiosRequestConfig } from 'axios';
 import { IHttpClient } from '~/types/IHttpClient';
 
-export default defineNuxtPlugin((_, inject) => {
+export default defineNuxtPlugin((nuxtApp) => {
   const client: IHttpClient = {
     get: <TResponse>(url: string, config?: AxiosRequestConfig) =>
       axios.get<TResponse>(url, config),
@@ -10,5 +10,9 @@ export default defineNuxtPlugin((_, inject) => {
       axios.post<TResponse>(url, data),
   };
 
-  inject('client', client);
+  return {
+    provide: {
+      client,
+    },
+  };
 });

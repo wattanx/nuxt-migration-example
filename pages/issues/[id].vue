@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, useFetch, useRoute, useContext } from '@nuxtjs/composition-api';
+import { ref, useLazyAsyncData, useRoute, useNuxtApp, useHead } from '#imports';
 import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
 
-const { $client, store } = useContext();
+const { $client, $store: store } = useNuxtApp();
 
 const title = ref<string>('');
 const body = ref<string>('');
@@ -12,9 +12,9 @@ const route = useRoute();
 
 const repo = useTargetRepository();
 
-useFetch(async () => {
+useLazyAsyncData('issues_id', async () => {
   const res = await getIssue($client, {
-    issueNumber: route.value.params.id,
+    issueNumber: route.params.id as string,
     repo,
   });
   title.value = res.title;
@@ -26,6 +26,10 @@ useFetch(async () => {
     issueNumber: res.issueNumber,
   });
 });
+
+useHead(() => ({
+  title: `#${issueNumber.value}`,
+}));
 </script>
 <template>
   <div class="max-w-[1280px] m-auto p-5">

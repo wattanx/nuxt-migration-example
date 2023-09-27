@@ -1,6 +1,6 @@
-import { defineNuxtMiddleware } from '@nuxtjs/composition-api';
+import { defineNuxtRouteMiddleware, navigateTo } from '#app';
 
-export default defineNuxtMiddleware(({ redirect, route }) => {
-  console.log('route.path', route.path);
-  return redirect('/');
+export default defineNuxtRouteMiddleware((to) => {
+  console.log('to.path', to.path);
+  return navigateTo('/');
 });

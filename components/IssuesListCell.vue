@@ -19,7 +19,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent } from '#imports';
 import ClosedStatus from '~/components/ClosedStatus.vue';
 import OpenStatus from '~/components/OpenStatus.vue';
 

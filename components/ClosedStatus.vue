@@ -6,7 +6,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent } from '#imports';
 import CheckIcon from '~/components//icons/CheckIcon.vue';
 
 export default defineComponent({
