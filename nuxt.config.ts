@@ -1,19 +1,31 @@
 const isAnalyzeMode = process.env.ANALYZE === 'true';
 
-export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'app',
-    htmlAttrs: {
-      lang: 'en',
+import { defineNuxtConfig } from '@nuxt/bridge';
+
+export default defineNuxtConfig({
+  bridge: {
+    capi: true,
+    typescript: true,
+    meta: true,
+    nitro: true,
+    macros: {
+      pageMeta: true,
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  app: {
+    head: {
+      title: 'app',
+      htmlAttrs: {
+        lang: 'ja',
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' },
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -21,13 +33,6 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    '@nuxtjs/composition-api/module',
-  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
@@ -52,9 +57,11 @@ export default {
       : false,
   },
   plugins: [{ src: '~/plugins/client', ssr: false }],
-  publicRuntimeConfig: {
-    targetOrganization: 'facebook',
-    targetRepository: 'react',
+  runtimeConfig: {
+    public: {
+      targetOrganization: 'facebook',
+      targetRepository: 'react',
+    },
   },
   ssr: false,
-};
+});

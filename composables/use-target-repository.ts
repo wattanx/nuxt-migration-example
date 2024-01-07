@@ -1,7 +1,7 @@
-import { useContext } from '@nuxtjs/composition-api';
+import { useRuntimeConfig } from '#imports';
 
 export const useTargetRepository = () => {
-  const { $config } = useContext();
+  const config = useRuntimeConfig().public;
 
-  return `${$config.targetOrganization}/${$config.targetRepository}`;
+  return `${config.targetOrganization}/${config.targetRepository}`;
 };

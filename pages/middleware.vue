@@ -1,11 +1,9 @@
-<template>
-  <div>not render</div>
-</template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
+<script setup lang="ts">
+definePageMeta({
   middleware: ['redirect'],
 });
 </script>
+
+<template>
+  <div>not render</div>
+</template>
