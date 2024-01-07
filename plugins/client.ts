@@ -1,6 +1,7 @@
 import { defineNuxtPlugin } from '#app';
-import axios, { AxiosRequestConfig } from 'axios';
-import { IHttpClient } from '~/types/IHttpClient';
+import axios from 'axios';
+import type { AxiosRequestConfig } from 'axios';
+import type { IHttpClient } from '~/types/IHttpClient';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const client: IHttpClient = {

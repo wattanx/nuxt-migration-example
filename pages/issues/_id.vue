@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useLazyAsyncData, useRoute, useNuxtApp, useHead } from '#imports';
+import { useLazyAsyncData, useRoute, useNuxtApp, useHead } from '#imports';
 import { getIssue } from '~/composables/github';
 import { useTargetRepository } from '~/composables/use-target-repository';
 
@@ -30,6 +30,10 @@ const issueNumber = computed(() => data.value?.issueNumber ?? 0);
 useHead(() => ({
   title: `#${issueNumber.value}`,
 }));
+
+definePageMeta({
+  name: 'IssueDetailPage',
+});
 </script>
 <template>
   <div v-if="!pending" class="max-w-[1280px] m-auto p-5">
@@ -50,9 +54,3 @@ useHead(() => ({
     </div>
   </div>
 </template>
-
-<script lang="ts">
-export default {
-  name: 'IssueDetailPage',
-};
-</script>

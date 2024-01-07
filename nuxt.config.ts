@@ -8,12 +8,15 @@ export default defineNuxtConfig({
     typescript: true,
     meta: true,
     nitro: true,
+    macros: {
+      pageMeta: true,
+    },
   },
   app: {
     head: {
       title: 'app',
       htmlAttrs: {
-        lang: 'en',
+        lang: 'ja',
       },
       meta: [
         { charset: 'utf-8' },
