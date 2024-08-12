@@ -11,6 +11,6 @@ useHead({
 <template>
   <div>
     <SiteHeader />
-    <Nuxt />
+    <slot />
   </div>
 </template>
