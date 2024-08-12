@@ -35,14 +35,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   runtimeConfig: {
     public: {
       targetOrganization: 'facebook',
       targetRepository: 'react',
     },
   },
+
   ssr: false,
-  builder: 'webpack',
+
   webpack: {
     analyze: isAnalyzeMode
       ? {
@@ -52,4 +54,6 @@ export default defineNuxtConfig({
         }
       : false,
   },
+
+  compatibilityDate: '2024-08-12',
 });
