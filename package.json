@@ -35,7 +35,6 @@
   },
   "nuxtBundleAnalysis": {
     "minimumChangeThreshold": 50,
-    "clientDir": "dist/client/_nuxt",
-    "statsFile": ".nuxt/analyze/client.json"
+    "builder": "vite"
   }
 }
